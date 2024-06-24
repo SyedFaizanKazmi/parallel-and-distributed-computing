@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package matrix_service;
+
+service MatrixService {
+    rpc SortArray (ArrayRequest) returns (ArrayResponse);
+    rpc FindMinValue (ArrayRequest) returns (MinMaxResponse);
+    rpc FindMaxValue (ArrayRequest) returns (MinMaxResponse);
+}
+
+message ArrayRequest {
+    repeated int32 array = 1;}
+
+message ArrayResponse {
+    repeated int32 array = 1; }
+
+message MinMaxResponse {
+    int32 value = 1; 
+}
+
